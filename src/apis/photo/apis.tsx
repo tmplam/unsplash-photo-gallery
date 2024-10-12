@@ -1,16 +1,15 @@
-import { AxiosResponse } from 'axios';
 import axios from '@/apis/axios';
 import { Photo } from '@/models';
 import { ApiGetPhotosParams } from './params';
 
-export const apiGetPhotos = (params: ApiGetPhotosParams): Promise<AxiosResponse<Photo[]>> =>
+export const apiGetPhotos = (params: ApiGetPhotosParams): Promise<Photo[]> =>
   axios({
     url: '/photos',
     method: 'get',
     params,
   });
 
-export const apiGetPhotoDetail = (photoId: string): Promise<AxiosResponse<Photo>> =>
+export const apiGetPhotoDetail = (photoId: string): Promise<Photo> =>
   axios({
     url: `/photos/${photoId}`,
     method: 'get',
