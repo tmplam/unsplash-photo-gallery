@@ -1,7 +1,10 @@
 import axios from 'axios';
 
 const instance = axios.create({
-  baseURL: import.meta.env.VITE_SERVER_URL,
+  baseURL: 'https://api.unsplash.com',
+  headers: {
+    Authorization: `Client-ID qK5NWf9OdSNjjKMDhizKjfBotgP4ttWR-lWSE6DmyJM`
+  }
 });
 
 // Add a request interceptor
