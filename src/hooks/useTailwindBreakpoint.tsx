@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
 
-// Define Tailwind breakPoints
-const breakPoints = {
+// Define Tailwind BreakPoints
+export const tailwindBreakPoints = {
+  xs: 'xs',
   sm: 'sm',
   md: 'md',
   lg: 'lg',
@@ -9,12 +10,12 @@ const breakPoints = {
   '2xl': '2xl',
 };
 
-const breakPointSizes = {
-  [breakPoints.sm]: 640,
-  [breakPoints.md]: 768,
-  [breakPoints.lg]: 1024,
-  [breakPoints.xl]: 1280,
-  [breakPoints['2xl']]: 1536,
+const tailwindBreakPointSizes = {
+  [tailwindBreakPoints.sm]: 640,
+  [tailwindBreakPoints.md]: 768,
+  [tailwindBreakPoints.lg]: 1024,
+  [tailwindBreakPoints.xl]: 1280,
+  [tailwindBreakPoints['2xl']]: 1536,
 };
 
 // Custom Hook to get current breakpoint
@@ -24,18 +25,18 @@ function useTailwindBreakpoint() {
   useEffect(() => {
     const updateBreakpoint = () => {
       const width = window.innerWidth;
-      if (width >= breakPointSizes[breakPoints['2xl']]) {
-        setBreakpoint('2xl');
-      } else if (width >= breakPointSizes[breakPoints.xl]) {
-        setBreakpoint('xl');
-      } else if (width >= breakPointSizes[breakPoints.lg]) {
-        setBreakpoint('lg');
-      } else if (width >= breakPointSizes[breakPoints.md]) {
-        setBreakpoint('md');
-      } else if (width >= breakPointSizes[breakPoints.sm]) {
-        setBreakpoint('sm');
+      if (width >= tailwindBreakPointSizes[tailwindBreakPoints['2xl']]) {
+        setBreakpoint(tailwindBreakPoints['2xl']);
+      } else if (width >= tailwindBreakPointSizes[tailwindBreakPoints.xl]) {
+        setBreakpoint(tailwindBreakPoints.xl);
+      } else if (width >= tailwindBreakPointSizes[tailwindBreakPoints.lg]) {
+        setBreakpoint(tailwindBreakPoints.lg);
+      } else if (width >= tailwindBreakPointSizes[tailwindBreakPoints.md]) {
+        setBreakpoint(tailwindBreakPoints.md);
+      } else if (width >= tailwindBreakPointSizes[tailwindBreakPoints.sm]) {
+        setBreakpoint(tailwindBreakPoints.sm);
       } else {
-        setBreakpoint('xs');
+        setBreakpoint(tailwindBreakPoints.xs);
       }
     };
 

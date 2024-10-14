@@ -19,5 +19,6 @@ export interface Photo {
       large: string;
     };
     total_photos: number;
+    total_likes: number;
   };
 }
