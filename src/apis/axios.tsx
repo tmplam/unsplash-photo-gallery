@@ -1,9 +1,9 @@
 import axios from 'axios';
 
 const instance = axios.create({
-  baseURL: 'https://api.unsplash.com',
+  baseURL: `${import.meta.env.VITE_UNSPLASH_BASE_URL}`,
   headers: {
-    Authorization: `Client-ID qK5NWf9OdSNjjKMDhizKjfBotgP4ttWR-lWSE6DmyJM`,
+    Authorization: `Client-ID ${import.meta.env.VITE_UNSPLASH_CLIENT_ID}`,
   },
 });
 
