@@ -13,7 +13,7 @@ export const Thumbnail: FunctionComponent<ThumbnailProps> = ({ src, alt, photoId
   return (
     <Link
       to={`/photos/${photoId}`}
-      className="h-44 rounded-lg bg-white p-1 border border-slate-200 shadow-lg shadow-slate-300 hover:scale-105 transition-transform cursor-pointer relative"
+      className="h-44 lg:h-60 rounded-lg bg-white p-1 border border-slate-200 shadow-lg shadow-slate-300 hover:scale-105 transition-transform cursor-pointer relative"
     >
       <img className="w-full h-full object-cover rounded-lg hover:brightness-75" src={src} alt={alt} />
       <div className="absolute bottom-3 left-3">

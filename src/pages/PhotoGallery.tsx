@@ -33,7 +33,7 @@ export function PhotoGallery() {
   // Fetch new page when scrolling to the bottom
   useEffect(() => {
     const onScroll = () => {
-      if (window.innerHeight + window.scrollY > window.document.body.offsetHeight - 1) {
+      if (window.innerHeight + window.scrollY >= window.document.body.offsetHeight) {
         setCurrentPage((prev) => prev + 1);
       }
     };
@@ -53,7 +53,7 @@ export function PhotoGallery() {
           Back to home
         </Link>
       </div>
-      <div className="grid grid-cols-2 md:grid-cols-4 xl:grid-cols-5 gap-4">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5 gap-4">
         {photos.map((photo) => {
           return (
             <Thumbnail
