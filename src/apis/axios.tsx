@@ -3,8 +3,8 @@ import axios from 'axios';
 const instance = axios.create({
   baseURL: 'https://api.unsplash.com',
   headers: {
-    Authorization: `Client-ID qK5NWf9OdSNjjKMDhizKjfBotgP4ttWR-lWSE6DmyJM`
-  }
+    Authorization: `Client-ID qK5NWf9OdSNjjKMDhizKjfBotgP4ttWR-lWSE6DmyJM`,
+  },
 });
 
 // Add a request interceptor
@@ -29,7 +29,7 @@ instance.interceptors.response.use(
   function (error) {
     // Any status codes that falls outside the range of 2xx cause this function to trigger
     // Do something with response error
-    return error.resonse;
+    return Promise.reject(error);
   },
 );
 

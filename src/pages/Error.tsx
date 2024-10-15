@@ -1,7 +1,8 @@
-// import { useRouteError } from 'react-router-dom';
-
 export function Error() {
-  // const error = useRouteError();
-  // console.log(error);
-  return <div>Error</div>;
+  return (
+    <div className="text-center">
+      <p className="text-6xl font-medium">ERROR</p>
+      <p className="text-xl">Some unexpected error happened.</p>
+    </div>
+  );
 }

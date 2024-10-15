@@ -9,13 +9,13 @@ interface ThumbnailProps {
   userProfile: string;
 }
 
-const Thumbnail: FunctionComponent<ThumbnailProps> = ({ src, alt, photoId, username, userProfile }) => {
+export const Thumbnail: FunctionComponent<ThumbnailProps> = ({ src, alt, photoId, username, userProfile }) => {
   return (
     <Link
       to={`/photos/${photoId}`}
-      className="rounded-lg bg-white p-1 border border-slate-200 shadow-lg shadow-slate-300 hover:scale-105 transition-transform cursor-pointer relative"
+      className="h-44 rounded-lg bg-white p-1 border border-slate-200 shadow-lg shadow-slate-300 hover:scale-105 transition-transform cursor-pointer relative"
     >
-      <img className="w-full rounded-lg hover:brightness-75" src={src} alt={alt} />
+      <img className="w-full h-full object-cover rounded-lg hover:brightness-75" src={src} alt={alt} />
       <div className="absolute bottom-3 left-3">
         <div className="flex items-center gap-x-2">
           <img className="w-10 h-10 border-2 rounded-full" src={userProfile} alt={username} />
@@ -25,5 +25,3 @@ const Thumbnail: FunctionComponent<ThumbnailProps> = ({ src, alt, photoId, usern
     </Link>
   );
 };
-
-export default Thumbnail;

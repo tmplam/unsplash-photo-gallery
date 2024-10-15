@@ -1,6 +1,10 @@
 import axios from '@/apis/axios';
 import { Photo } from '@/models';
-import { ApiGetPhotosParams } from './params';
+
+export interface ApiGetPhotosParams {
+  page: number;
+  per_page: number;
+}
 
 export const apiGetPhotos = (params: ApiGetPhotosParams): Promise<Photo[]> =>
   axios({
